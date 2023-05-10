@@ -17,6 +17,7 @@ namespace ariel
         
         Fraction(int nume,int denom);
         Fraction(float number);
+        Fraction();
         int getNumerator() const;
         int getDenominator() const;
         friend Fraction operator-(const Fraction &);
@@ -29,13 +30,12 @@ namespace ariel
         friend Fraction operator-(const Fraction&,const Fraction&);
         friend Fraction operator*(const Fraction&,const Fraction&);
         friend Fraction operator/(const Fraction&,const Fraction&);
-        friend Fraction operator++(const Fraction&);
-        friend Fraction operator--(const Fraction&);
-        friend Fraction operator++(const Fraction&,int);
-        friend Fraction operator--(const Fraction&,int);
-        friend ostream& operator<<(ostream& os, const Fraction&);
-        friend Fraction operator>>(ostream& os, const Fraction&);
-        friend istream & operator>>(istream &in,  Fraction &c);
+        Fraction& operator++();
+        Fraction& operator--();
+        Fraction operator++(int);
+        Fraction operator--(int);
+        friend ostream& operator<<(ostream& output, const Fraction&);
+        friend istream & operator>>(istream &input,  Fraction &);
     };
     
     
